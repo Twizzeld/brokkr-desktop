@@ -1,0 +1,264 @@
+<html data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <script type="module" src="/src/renderer.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="container">
+      <h1 class="title has-text-centered">Brokkr</h1>
+    </div>
+
+    <!-- Body -->
+    <div class="container main-body">
+      <div class="columns m-1">
+        <!-- Left Column -->
+        <div class="column">
+          <label class="is-size-6">Inbound Email</label>
+          <label class="is-size-7 email-error is-pulled-right" hidden><i>All fields are required</i></label>
+          <textarea class="textarea mt-3" placeholder="Paste the email here" required></textarea>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column">
+          <!-- Tabs -->
+
+          <div class="tabs is-boxed">
+            <ul>
+              <li class="is-active coreTab"><a>Core</a></li>
+              <li class="wallconTab"><a>Wallcon</a></li>
+              <button class="button is-small validate">Validate</button>
+              <button class="button is-small run" disabled>Run</button>
+            </ul>
+          </div>
+
+          <!-- Tab Content -->
+          <!-- Core Tab -->
+          <div id="core" class="tab-content">
+            <div class="field">
+              <label class="label is-small">Customer Name</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Customer Name" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Requested Ship Date</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Requested Ship Date" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Requested Ship Time</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Requested Ship Time" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Phone</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Phone" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Email</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Email" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Address</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Address" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Job Contact Name</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Job Contact Name" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Customer Phone Number</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Phone Number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Strength (PSI)</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Strength (PSI)" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Quantity</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Quantity" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Usage</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Usage" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Slump</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Slump" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Type of Mesh</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Type of Mesh" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Spacing</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Spacing" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Method of Placement</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Method of Placement" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Notes</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Notes" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Wallcon Tab -->
+          <div id="wallcon" class="tab-content hidden-tab">
+            <div class="field">
+              <label class="label is-small">Customer</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Customer" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Subdivision</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Subdivision" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Address</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Address" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Lot</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Lot" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Task</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Task" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Mix Design</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Mix Design" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Quantity</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Quantity" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Pour Date</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Pour Date" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Pour Time</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Pour Time" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Slump</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Slump" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Spacing</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Spacing" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">Add</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="Add" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label is-small">PO Number</label>
+              <div class="control">
+                <input class="input is-small" type="text" name="PO Number" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instructions Container -->
+      <div class="container">
+        <div class="columns m-1">
+          <div class="column">
+            <h4 class="title is-4 pl-4">Instructions</h4>
+            <ol class="ml-5">
+              <li>Paste email into the textarea.</li>
+              <li>Verify the data has been correctly added to the form and click the "Validate" button.</li>
+              <li>Click Run</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

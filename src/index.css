@@ -1,0 +1,45 @@
+.title {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+}
+
+.main-body {
+  margin-top: 10px;
+}
+
+.main-body textarea {
+  height: 426px;
+  max-height: unset !important;
+}
+
+.hidden-tab {
+  display: none;
+}
+
+.validate {
+  margin-left: auto;
+}
+
+.email-error {
+  color: red;
+  margin-left: auto;
+}
+
+#core {
+  height: 400px;
+  overflow: auto;
+}
+
+#wallcon {
+  height: 400px;
+  overflow: auto;
+}
+
+body {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
