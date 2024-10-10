@@ -42,7 +42,11 @@ function coreParser(email) {
 
     // The Address value is a combination of the next two lines
     if (key === "Address") {
-      const addressValue = `${prepareLines[i + 1]}, ${prepareLines[i + 2]}`;
+      const cityState = prepareLines[i + 2];
+      const length = cityState.length;
+      const city = cityState.slice(0, length - 3);
+      const state = cityState.slice(length - 2, length);
+      const addressValue = `${prepareLines[i + 1]}, ${city}, ${state}`;
       newObject[key] = addressValue;
       i += 1; // Skip the next two lines since they are already combined
     } else {

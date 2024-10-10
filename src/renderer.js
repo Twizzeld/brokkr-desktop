@@ -91,7 +91,25 @@ document.querySelector(".run").addEventListener("click", function () {
   document.querySelector(".run").setAttribute("disabled", true);
   document.querySelector(".run").setAttribute("style", "color: black");
   document.querySelector(".validate").setAttribute("style", "color: black");
+
+  submitOrder();
 });
+
+// Function to submit the order
+async function submitOrder() {
+  const fields = document.querySelectorAll(`[id=${company}] input`);
+  const values = [];
+
+  fields.forEach((field) => {
+    const value = field.value;
+    const name = field.name;
+    values.push({ name, value });
+  });
+
+  window.api.submitOrder(values).then((result) => {
+    console.log(result); // Output: Processed: Hello from Renderer!
+  });
+}
 
 // Function to validate all fields
 function validateFields() {
@@ -125,3 +143,67 @@ function resetAllForms() {
     input.value = "";
   });
 }
+
+// FOR TESTING ONLY
+document.onreadystatechange = () => {
+  if (document.readyState === "complete") {
+    document.querySelector("textarea").value = `
+Customer Information
+Customer Name
+
+Fiesta Concrete
+Requested Ship Date
+
+03/04/2024
+Requested Ship Time
+
+08:00 am
+Phone
+
+(623) 696-6759
+Email
+
+rdearth@fiesta-az.com<mailto:rdearth@fiesta-az.com>
+Job
+Address
+
+Ironwood and Ray rd
+Apache Junction AZ
+Map It<https://maps.google.com/maps?q=3DIronwood+and+Ray+rd+Apache+Junction=
++AZ>
+Job Contact Name
+
+Elmer
+Phone Number
+
+(623) 518-8144
+Product
+Strength (PSI)
+
+MAG A
+Quantity
+
+22yds
+Usage
+
+Flatwork
+Slump
+
+7"
+Type of Mesh
+
+Micro Fiber: Mitigate Plastic Shrinkage Cracking
+Schedule
+Spacing
+
+45 minutes
+Method of Placement (ei. Wheel barrow, Grout pump, Boom pump, machine, chut=
+e pour, crane and bucket)
+
+Chute pour
+Notes
+
+Monday to Friday same time, location and yardage. Thank you. `;
+  }
+  document.querySelector("textarea").dispatchEvent(new Event("input"));
+};
